@@ -1,0 +1,13 @@
+.icon-space {
+  margin-right: 10px;
+}
+
+mat-toolbar {
+  margin: -10px -20px 25px -20px;
+  background-color: #fff;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom: 1px solid #eee;
+  padding: 10px 20px;
+  width: calc(100% + 40px);
+}

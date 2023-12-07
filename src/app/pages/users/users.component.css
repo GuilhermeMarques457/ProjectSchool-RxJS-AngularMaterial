@@ -1,0 +1,20 @@
+.tabs {
+  margin-top: 1em;
+}
+
+.tabs a {
+  font-size: 16px;
+}
+
+.mat-focus-indicator {
+  color: black;
+}
+
+mat-icon {
+  margin-right: 10px;
+}
+
+.container {
+  padding: 35px 25px;
+  border: 1px solid #eee;
+}
