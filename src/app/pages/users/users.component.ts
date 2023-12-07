@@ -4,6 +4,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { ToolbarTitleComponent } from '../../shared/components/toolbar-title/toolbar-title.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-users',
@@ -14,6 +15,7 @@ import { ToolbarTitleComponent } from '../../shared/components/toolbar-title/too
     CommonModule,
     RouterLink,
     MatIconModule,
+    MatButtonModule,
     ToolbarTitleComponent,
   ],
   templateUrl: './users.component.html',
