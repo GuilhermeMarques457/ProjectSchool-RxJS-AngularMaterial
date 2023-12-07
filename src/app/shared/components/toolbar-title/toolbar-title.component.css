@@ -2,6 +2,11 @@
   margin-right: 10px;
 }
 
+.icon-space-mat {
+  font-size: 20px;
+  margin: 5px 5px 0 0;
+}
+
 mat-toolbar {
   margin: -10px -20px 25px -20px;
   background-color: #fff;

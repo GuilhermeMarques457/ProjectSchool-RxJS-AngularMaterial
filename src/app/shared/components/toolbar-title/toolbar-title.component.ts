@@ -13,5 +13,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class ToolbarTitleComponent {
   @Input() title = '';
-  @Input() icon = '';
+
+  iconFa = '';
+  iconMat = '';
+  @Input() set icon(value: string) {
+    value.includes('fa-')
+      ? (this.iconFa = `icon-space-mat ${value}`)
+      : (this.iconMat = value);
+  }
 }
