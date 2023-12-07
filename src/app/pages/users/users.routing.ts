@@ -4,7 +4,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { MyConquestsComponent } from './my-conquests/my-conquests.component';
 import { MyDiciplinesComponent } from './my-diciplines/my-diciplines.component';
 
-export const UsersRouting: Route[] = [
+export const UsersRoutes: Route[] = [
   {
     path: '',
     component: UsersComponent,
