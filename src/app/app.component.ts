@@ -6,6 +6,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MenuItem } from './shared/models/menuItem';
+import { menuItems } from './shared/models/menu';
 // import { NgModule } from '@angular/core';
 // import { MatSliderModule } from '@angular/material/slider';
 // import { MatInputModule } from '@angular/material/input';
@@ -41,6 +43,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './app.component.sass',
 })
 export class AppComponent {
+  public itemsMenu: MenuItem[] = menuItems;
   public isSmallScreen = false;
   title = 'ProjectSchool';
 

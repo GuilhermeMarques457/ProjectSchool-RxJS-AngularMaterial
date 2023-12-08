@@ -8,14 +8,17 @@
   >
     <mat-toolbar color="primary"> Smart Examples </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/users">Users <mat-icon>person</mat-icon></a>
-      <a mat-list-item routerLink="/form-field-input">Form Field</a>
-      <a mat-list-item routerLink="/progress-spinner">Progress Spinner & Bar</a>
-      <a mat-list-item routerLink="/tabs">Tabs</a>
-      <a mat-list-item routerLink="/date-picker">Date Picker</a>
-      <a mat-list-item routerLink="/snackbar">Snackbar</a>
-      <a mat-list-item routerLink="/dialog">Dialog</a>
-      <a mat-list-item routerLink="/datatable">Data Table</a>
+      <a
+        *ngFor="let menuItem of itemsMenu"
+        mat-list-item
+        routerLink="{{ menuItem.link }}"
+        routerLinkActive="active"
+      >
+        <mat-icon fontSet="fa" [fontIcon]="menuItem.icon"></mat-icon>
+        <span>
+          {{ menuItem.label }}
+        </span>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 

@@ -2,6 +2,11 @@ import { MenuItem } from './menuItem';
 
 export const menuItems: MenuItem[] = [
   {
+    link: '/users',
+    icon: 'fa-user',
+    label: 'Usuário',
+  },
+  {
     link: '/dashboard',
     icon: 'fa-chart-line',
     label: 'Dashboard',
@@ -9,21 +14,21 @@ export const menuItems: MenuItem[] = [
   {
     link: '/courses',
     icon: 'fa-graduation-cap',
-    label: 'Cursos',
+    label: 'Courses',
   },
   {
     link: '/teachers',
     icon: 'fa-person-chalkboard',
-    label: 'Professores',
+    label: 'Teachers',
   },
   {
     link: '/students',
     icon: 'fa-chalkboard-user',
-    label: 'Alunos',
+    label: 'Students',
   },
   {
     link: '/support',
     icon: 'fa-headset',
-    label: 'Suporte',
+    label: 'Support',
   },
 ];
