@@ -2,11 +2,6 @@ import { MenuItem } from './menuItem';
 
 export const menuItems: MenuItem[] = [
   {
-    link: '/users',
-    icon: 'fa-user',
-    label: 'Usuário',
-  },
-  {
     link: '/dashboard',
     icon: 'fa-chart-line',
     label: 'Dashboard',

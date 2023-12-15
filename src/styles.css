@@ -12,8 +12,13 @@ body {
 }
 
 .content {
+  z-index: 999999;
   padding: 20px;
   border-radius: 5px;
-  margin: -30px 34px 35px;
+
   background-color: #fff;
+}
+
+.content-route {
+  margin: -50px 34px 35px;
 }

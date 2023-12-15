@@ -25,17 +25,17 @@ export class UsersComponent {
   links = [
     {
       icon: 'person',
-      url: '/pages/users/my-profile',
+      url: '/users/my-profile',
       display: 'Profile',
     },
     {
       icon: 'play_lesson',
-      url: '/pages/users/my-diciplines',
+      url: '/users/my-diciplines',
       display: 'Disciplines',
     },
     {
       icon: 'workspace_premium',
-      url: '/pages/users/my-conquests',
+      url: '/users/my-conquests',
       display: 'Conquests',
     },
   ];

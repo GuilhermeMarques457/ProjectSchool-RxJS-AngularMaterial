@@ -2,6 +2,11 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'dashboard',
+  },
+  {
     path: 'users',
     loadChildren: () =>
       import('./pages/users/users.routing').then((r) => r.UsersRoutes),
@@ -32,5 +37,10 @@ export const routes: Routes = [
       import('./pages/dashboard/dashboard.routing').then(
         (r) => r.DashboardRoutes
       ),
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: 'dashboard',
   },
 ];

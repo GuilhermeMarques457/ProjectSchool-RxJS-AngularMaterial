@@ -1,0 +1,37 @@
+mat-form-field {
+  height: 80px;
+}
+
+.form-field-category {
+  @media (min-width: 600px) {
+    padding-right: 10px;
+  }
+}
+
+::ng-deep .mat-paginator-container,
+::ng-deep .mat-paginator-range-label {
+  padding: 0px 0px !important;
+}
+
+mat-card {
+  height: 600px;
+  margin-bottom: 44px;
+  box-shadow: 0px 1px 2px 1px rgb(0 0 0 / 25%);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -wedkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  cursor: pointer;
+
+  .card-header {
+    padding: 0 16px;
+  }
+
+  &-title {
+    font-size: 20px;
+    height: 70px;
+  }
+}
+
+mat-card:hover {
+  transform: scale(1.01);
+}

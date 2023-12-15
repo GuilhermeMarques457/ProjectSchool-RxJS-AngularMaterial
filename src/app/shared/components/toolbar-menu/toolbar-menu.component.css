@@ -1,0 +1,43 @@
+.toolbar-menu {
+  position: fixed;
+  font-size: 1rem;
+  z-index: 1000;
+  top: 0;
+  height: 64px;
+  color: #fff;
+  background-color: #666;
+  border-bottom: 1px solid #707070;
+  text-shadow: 2px 1px 3px #322323;
+}
+
+.content-center {
+  display: flex;
+  margin-left: auto;
+}
+
+.space-right-icon {
+  margin-right: 10px;
+}
+
+.mat-menu-item.mat-icon {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  gap: 10px;
+}
+
+.logo .title {
+  font-size: 20px;
+}
+
+.logo.mat-icon {
+  margin: 10px 10px 8px -10px;
+  font-size: 18px;
+  width: 100px;
+}
