@@ -23,7 +23,19 @@ import {
 } from '@angular/material/paginator';
 import { CustomPaginator } from '@app/shared/helpers/customPaginator';
 import { HttpResponse } from '@angular/common/http';
-import { debounceTime, delay, take } from 'rxjs';
+import {
+  EMPTY,
+  Observable,
+  Subscription,
+  catchError,
+  debounceTime,
+  delay,
+  map,
+  of,
+  take,
+} from 'rxjs';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-course-list',
@@ -41,6 +53,7 @@ import { debounceTime, delay, take } from 'rxjs';
     CommonModule,
     ReactiveFormsModule,
     MatPaginatorModule,
+    MatProgressBarModule,
   ],
   templateUrl: './course-list.component.html',
   styleUrl: './course-list.component.scss',
@@ -58,6 +71,10 @@ export class CourseListComponent {
   totalCount = 0;
   pageSize = 5;
   currentPage = 1;
+  courseData$!: Observable<any>;
+  currentFilter!: string;
+  currentSearching!: string;
+  // subs$!: Subscription;
 
   form!: FormGroup;
 
@@ -68,7 +85,15 @@ export class CourseListComponent {
     });
   }
 
-  constructor(private courseService: CoursesService, private fb: FormBuilder) {}
+  constructor(
+    private courseService: CoursesService,
+    private fb: FormBuilder,
+    private snackbar: MatSnackBar
+  ) {}
+
+  // ngOnDestroy(): void {
+  //   this.subs$.unsubscribe();
+  // }
 
   ngOnInit(): void {
     this.validation();
@@ -93,14 +118,31 @@ export class CourseListComponent {
     category?: string,
     search?: string
   ) {
-    this.courseService.get(currentPage, pageSize, category, search).subscribe({
-      next: (res: HttpResponse<any>) => {
-        this.courseList = res.body as Course[];
-        this.totalCount = Number(res.headers.get('X-Total-Count')) || 0;
-      },
-      error: (err) => {},
-      complete: () => {},
-    });
+    // this.subs$ = this.courseService
+    this.courseData$ = this.courseService
+      .get(currentPage, pageSize, category, search)
+      .pipe(
+        map((res: HttpResponse<any>) => {
+          this.courseList = res.body as Course[];
+          this.totalCount = Number(res.headers.get('X-Total-Count')) || 0;
+
+          if (this.totalCount === 0) {
+            if (category) {
+              this.currentFilter = category;
+            }
+            this.currentSearching = search || '';
+          }
+
+          return res;
+        }),
+        catchError((err) => {
+          this.snackbar.open(err, 'Close', {
+            duration: 4000,
+          });
+
+          return EMPTY;
+        })
+      );
   }
 
   onSubmit() {}
@@ -125,4 +167,11 @@ export class CourseListComponent {
       this.form.value.search
     );
   }
+}
+function pipe(arg0: any) {
+  throw new Error('Function not implemented.');
+}
+
+function tap(arg0: () => void): any {
+  throw new Error('Function not implemented.');
 }

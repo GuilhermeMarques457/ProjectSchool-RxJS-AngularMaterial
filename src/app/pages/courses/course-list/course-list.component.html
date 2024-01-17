@@ -36,7 +36,16 @@
   </div>
 </form>
 
-<div fxLayout="row wrap" fxLayoutGap="16px grid">
+<div
+  fxLayout="row wrap"
+  fxLayoutGap="16px grid"
+  *ngIf="courseData$ | async; else loading"
+>
+  <div *ngIf="courseList.length == 0">
+    <p>There is no course that matches the applied filter:</p>
+    <p *ngIf="currentFilter">Category: {{ currentFilter }}</p>
+    <p>Filter: {{ currentSearching }}</p>
+  </div>
   <div
     fxFlex="20"
     fxFlex.xs="100"
@@ -80,3 +89,6 @@
     </mat-card>
   </div>
 </div>
+<ng-template #loading
+  ><mat-progress-bar mode="indeterminate"></mat-progress-bar
+></ng-template>
